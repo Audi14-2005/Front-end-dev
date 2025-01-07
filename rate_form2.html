@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rate Form</title>
+</head>
+<body>
+    <h1>Rate Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="vessel_type">Vessel Type:</label>
+        <input type="text" id="vessel_type" name ="vessel_type" required>
+        <label for="rate_type">Rate Type:</label>
+        <input type="text" id="rate_type" name="rate_type" required>
+        <form method="POST">
+        <label for="gt">GT (Multiplier):</label>
+        <input type="number" name="gt" step="0.01" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
