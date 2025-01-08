@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Result</title>
+    <link rel="stylesheet" href="../CSS/result.css">
+    <script src="../Scripts/script.js"></script>
+    <div id="navbar"></div>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Rate Result</h1>
+        <div class="result-box">
+            <p>Short Code : <span id="short-code"></span></p>
+            <p>Rate Value : <span id="rate-value"></span></p>
+            <p>GST (18%)  : <span id="gst-value"></span></p>
+            <p>Total Value : <span id="total-value"></span></p>
+        </div>
+        <a class="ani" href="./PortDues.html">Go back</a>
+    </div>
+
+    <script>
+        // Sample data (these values would come from your backend or API)
+        const shortCode = "SC123";
+        const rateValue = 45.00; // Example rate value, make sure it's a number (float)
+
+        // Calculate GST (18%)
+        const gstRate = 0.18;
+        const gstValue = rateValue * gstRate;
+        const totalValue = rateValue + gstValue;
+
+        // Populate the values in the HTML
+        document.getElementById("short-code").innerText = shortCode;
+        document.getElementById("rate-value").innerText = `₹ ${rateValue.toFixed(2)}`; // Format to 2 decimal places
+        document.getElementById("gst-value").innerText = `₹ ${gstValue.toFixed(2)}`; // Format to 2 decimal places
+        document.getElementById("total-value").innerText = `₹ ${totalValue.toFixed(2)}`; // Format to 2 decimal places
+    </script>
+</body>
+<footer id="footer"></footer>
+</html>

@@ -1,0 +1,39 @@
+:root {
+    background-color: #ffffff;
+}
+
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        min-height: 100vh; /* Ensure body is at least the height of the viewport */
+        display: flex;
+        flex-direction: column; /* Enable column layout */
+        height:900px;
+    }
+
+
+h1 {
+    color: #333;
+    text-align:left;
+    padding: 20px;
+    font-size: 40px;
+}
+.a {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 25px;
+    width: 150px;
+    height:25px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+.a:hover {
+    background-color: #0056b3;
+}
