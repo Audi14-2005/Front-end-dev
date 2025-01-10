@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demurrage Calculation</title>
+    <script src="../Scripts/script.js"></script>
+    <link rel="stylesheet" href="../CSS/PortDues.css">
+    <div id="navbar"></div>
+    <footer id="footer"></footer>
+</head>
+<body>
+    <div class="content">
+        <h2>Demurrage Calculation</h2>
+        <div class="port-form">
+            <form method="POST" action="/demurrage/calculate/">
+            <label for="hours">Hours:</label>
+            <input 
+                id="hours"
+                class="input"
+                name="hours" 
+                type="number" 
+                step="0.1" 
+                min="0" 
+                placeholder="Enter hours (e.g., 5.5)" 
+                required 
+            >
+            <br>
+            <label for="wagon">Wagon:</label>
+            <input 
+                class="input"
+                id="wagon" 
+                name="wagon" 
+                type="number" 
+                min="1" 
+                step="1" 
+                placeholder="Enter number of wagons" 
+                required 
+            >
+            <br>
+            <a id="submitButton" class="ani" href='#'>Calculate</a>
+            <a class="ani" href='../Railway.html'>Go back</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

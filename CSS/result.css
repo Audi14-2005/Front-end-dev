@@ -23,18 +23,17 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Styling for each result box */
 .result-box {
     border: 1px solid #007BFF;
     border-radius: 8px;
     padding: 20px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    margin-bottom: 20px;
 }
 
+/* Styling for individual inputs */
 .result-box p {
     font-size: 18px;
     margin: 5px 0;

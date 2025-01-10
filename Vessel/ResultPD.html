@@ -7,35 +7,67 @@
     <link rel="stylesheet" href="../CSS/result.css">
     <script src="../Scripts/script.js"></script>
     <div id="navbar"></div>
-    
 </head>
 <body>
     <div class="container">
         <h1>Rate Result</h1>
         <div class="result-box">
-            <p>Short Code : <span id="short-code"></span></p>
-            <p>Rate Value : <span id="rate-value"></span></p>
-            <p>GST (18%)  : <span id="gst-value"></span></p>
-            <p>Total Value : <span id="total-value"></span></p>
+            <!-- First box for the first four inputs -->
+            <div class="input-box1">
+                <p>Vessel Type: <span id="vessel-type"></span></p>
+                <p>Category: <span id="category"></span></p>
+                <p>Gross Tonnage (GT): <span id="gt"></span></p>
+                <p>Rate Per GT Per Hour: <span id="rate-value"></span></p>
+            </div>
+            <!-- Second box for the remaining inputs, displayed side by side -->
+            <div class="input-box2">
+                <div>
+                    <p>Final Rate (without GST): <span id="final-rate"></span></p>
+                    <p>GST (18%): <span id="gst-value"></span></p>
+                </div>
+                <div>
+                    <p>Final Rate with GST: <span id="total-value"></span></p>
+                    <p id="exchange-rate-section" style="display: none;">Exchange Rate (USD to INR): <span id="exchange-rate"></span></p>
+                    <p id="final-rate-inr-section" style="display: none;">Final Rate with GST (INR): <span id="final-rate-inr"></span></p>
+                </div>
+            </div>
         </div>
         <a class="ani" href="./PortDues.html">Go back</a>
     </div>
 
     <script>
-        // Sample data (these values would come from your backend or API)
-        const shortCode = "SC123";
-        const rateValue = 45.00; // Example rate value, make sure it's a number (float)
-
+        // Sample data (replace these with actual values from your backend)
+        const vesselType = "Cargo";
+        const category = "Large";
+        const gt = 15000;
+        const rateValue = 20.50; // Example rate value, make sure it's a number
+        const finalRate = rateValue * gt;
+        
         // Calculate GST (18%)
         const gstRate = 0.18;
-        const gstValue = rateValue * gstRate;
-        const totalValue = rateValue + gstValue;
+        const gstValue = finalRate * gstRate;
+        const totalValue = finalRate + gstValue;
 
+        // Sample exchange rate (for demonstration)
+        const exchangeRate = 82.5; 
+        const finalRateInr = totalValue * exchangeRate;
+        
         // Populate the values in the HTML
-        document.getElementById("short-code").innerText = shortCode;
-        document.getElementById("rate-value").innerText = `₹ ${rateValue.toFixed(2)}`; // Format to 2 decimal places
-        document.getElementById("gst-value").innerText = `₹ ${gstValue.toFixed(2)}`; // Format to 2 decimal places
-        document.getElementById("total-value").innerText = `₹ ${totalValue.toFixed(2)}`; // Format to 2 decimal places
+        document.getElementById("vessel-type").innerText = vesselType;
+        document.getElementById("category").innerText = category;
+        document.getElementById("gt").innerText = gt;
+        document.getElementById("rate-value").innerText = `${rateValue.toFixed(2)}`;
+        document.getElementById("final-rate").innerText = `${finalRate.toFixed(2)}`;
+        document.getElementById("gst-value").innerText = `${gstValue.toFixed(2)}`;
+        document.getElementById("total-value").innerText = `${totalValue.toFixed(2)}`;
+
+        // Check if exchange rate exists, then display related fields
+        if (exchangeRate) {
+            document.getElementById("exchange-rate-section").style.display = "block";
+            document.getElementById("final-rate-inr-section").style.display = "block";
+            document.getElementById("exchange-rate").innerText = exchangeRate;
+            document.getElementById("final-rate-inr").innerText = `${finalRateInr.toFixed(2)}`;
+        }
     </script>
 </body>
 <footer id="footer"></footer>

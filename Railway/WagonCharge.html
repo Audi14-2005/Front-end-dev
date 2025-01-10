@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric in Motion - Wagon Charge Calculation</title>
+    <script src="../Scripts/script.js"></script>
+    <link rel="stylesheet" href="../CSS/PortDues.css">
+    <div id="navbar"></div>
+    <footer id="footer"></footer>
+</head>
+<body>
+    <div class="content">
+        <h1>Wagon Charge Calculation</h1>
+        <div class="container">
+            <form method="POST">
+                <label for="wagon_type">Select Wagon Type:</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input class="radio" type="radio" id="loaded" name="wagon_type" value="loaded" required>
+                        <label for="loaded">Loaded Wagon</label>
+                    </div>
+                    <div class="radio-item">
+                        <input class="radio" type="radio" id="empty" name="wagon_type" value="empty">
+                        <label for="empty">Empty Wagon</label>
+                    </div>
+                </div><br>
+                <label for="wagons">Enter the number of wagons:</label>
+                <input class="input" type="number" id="wagons" name="wagons" required>
+                <a id="submitButton" class="ani" href='#'>Calculate</a>
+                <a class="ani" href='../Railway.html'>Go back</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

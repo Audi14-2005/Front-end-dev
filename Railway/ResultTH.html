@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Charges Result</title>
+    <link rel="stylesheet" href="../CSS/result.css">
+    <script src="../Scripts/script.js"></script>
+    <div id="navbar"></div>
+</head>
+<body>
+    <h1>Terminal Handling Charges Result</h1>
+    <p><strong>Number of Tons:</strong> {{ calculation.tons }}</p>
+    <p><strong>Charge Type:</strong> {{ calculation.charge_type }}</p>
+    <p><strong>Normal Charge (NC):</strong> {{ calculation.nc }}</p>
+    <p><strong>Total Charges:</strong> {{ calculation.total_charges }}</p>
+    <a href="/terminal/handling/">Calculate Again</a>
+</body>
+<footer id="footer"></footer>
+</html>
